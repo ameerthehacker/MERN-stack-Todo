@@ -20,7 +20,7 @@ export class Todo extends Component {
         console.log(this.state.item)
         axios({
             method: 'post',
-            url: 'http://localhost:3000/',
+            url: 'http://localhost:8000/',
             data: {
               todo: this.state.item,
             }
@@ -29,7 +29,7 @@ export class Todo extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/').then((response) => {
+        axios.get('http://localhost:8000/').then((response) => {
             console.log(response.data.data)
             let data = [];
             console.log(response.data.data.length)
@@ -40,7 +40,7 @@ export class Todo extends Component {
         });
     }
     componentDidUpdate() {
-        axios.get('http://localhost:3000/').then((response) => {
+        axios.get('http://localhost:8000/').then((response) => {
             console.log(response.data.data)
             let data = [];
             console.log(response.data.data.length)
